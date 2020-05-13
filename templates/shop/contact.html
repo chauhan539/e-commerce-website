@@ -1,0 +1,52 @@
+{% extends 'shop/basic.html' %}
+
+{% block title%} Contact us {% endblock %}
+{% block body %}
+
+
+
+
+
+<div class="container-fluid my-4">
+    <div class="row">
+        <div class="col-lg-6 offset-lg-2">
+
+            <!-- THE CONTACT FORM IS HERE -->
+            <h2>Contact us!</h2>
+            <form action="/shop/contact/" method='post'><input type="hidden" name="csrfmiddlewaretoken"
+                    value="6flDlx31vL8cQ8RbgmcZtiWLUWkAhrdZSMoPKwIFRQCiXZKLQNnmtd9rVcZRvzL4">{% csrf_token %}
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="name" class="form-control" id="name" placeholder="Enter your Name" name="name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Your Email</label>
+                    <input type="email" class="form-control" id="cemail" placeholder="Enter your Email" name="email">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Your Phone Number (with country code)</label>
+                    <input type="text" class="form-control" id="phone" placeholder="Enter your Phone Number"
+                        name="phone">
+                </div>
+                <div class="form-group">
+                    <label for="desc">How can we help you?</label>
+                    <textarea type="text" class="form-control" id="message" placeholder="Your message"
+                        name="desc"></textarea>
+                </div>
+                <div class="g-recaptcha" data-sitekey="6LdvcqwUAAAAACmPYNVoiJA7D84xLSQQt5g9p10m"></div>
+                <button type="submit" class="btn btn-danger mt-2">Submit</button>
+            </form>
+
+        </div>
+        <hr>
+
+        <!-- SIDE WIDGET IS HERE -->
+
+    </div>
+</div>
+
+
+
+
+
+{% endblock %}
